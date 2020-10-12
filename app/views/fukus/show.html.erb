@@ -8,9 +8,9 @@
 　　　　　　<p><%=@fuku.title%></p>
 　　　　　　<p><%=@fuku.body%></p>　　
 　　　　　　<% if Like.find_by(user_id:current_user.id, fuku_id:@fuku.id)%>
-　　　　　　<p><%= link_to 'いいね済み', fuku_like_path(@fuku), method: :delete%></p>
+　　　　　　<p><%= link_to 'いいね済み', fuku_like_path(@fuku), method: :delete,class:"like"%></p>
  　　　　　 <%else%> 
-          <p><%= link_to 'いいね', fuku_likes_path(@fuku), method: :post %></p>
+          <p><%= link_to 'いいね', fuku_likes_path(@fuku), method: :post,class:"like"%></p>
 　　　　　　<%end%>
          <p><%= link_to('編集', edit_fuku_path) %></p>
          <p><%= link_to '削除', fuku_path(@fuku), method: :delete %></p>
