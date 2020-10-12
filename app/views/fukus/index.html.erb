@@ -1,0 +1,14 @@
+<h2 class="is-size-3">投稿一覧</h2>
+  <div class="columns is-multiline is-centered">
+   <% @fukus.each do |fuku|%>
+    <div class="column is-4 has-text-centered">
+      <div class="card has-text-centered">
+       <div class="card-content">
+           <%= link_to(fuku_path(fuku)) do %>
+        　 <%=attachment_image_tag fuku,:image,class:"thumbnail150" %>
+           <% end %>
+       </div>
+      </div>
+    </div>
+    <%end%>
+    </div>

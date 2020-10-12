@@ -1,0 +1,20 @@
+<h2 class="is-size-3">服の詳細</h2>
+  <div class="columns is-multiline is-centered">
+    <div class="column is-4 has-text-centered">
+      <div class="card">
+       <div class="card-content">
+          <p><%= attachment_image_tag @fuku, :image , class:"thumbnail150"%></p>
+          <p><%=@fuku.user.name%></p>
+　　　　　　<p><%=@fuku.title%></p>
+　　　　　　<p><%=@fuku.body%></p>　　
+　　　　　　<% if Like.find_by(user_id:current_user.id, fuku_id:@fuku.id)%>
+　　　　　　<p><%= link_to 'いいね済み', fuku_like_path(@fuku), method: :delete%></p>
+ 　　　　　 <%else%> 
+          <p><%= link_to 'いいね', fuku_likes_path(@fuku), method: :post %></p>
+　　　　　　<%end%>
+         <p><%= link_to('編集', edit_fuku_path) %></p>
+         <p><%= link_to '削除', fuku_path(@fuku), method: :delete %></p>
+      </div>
+    </div>
+  </div>
+</div>

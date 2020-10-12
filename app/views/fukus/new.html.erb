@@ -1,0 +1,33 @@
+<div class="form">
+<h2 class="title">新規投稿</h2>
+
+<%= form_for @fuku do |f| %>
+<% if @fuku.errors.any? %>
+  <div class="notification is-danger">
+    <h3>入力した内容にエラーが<%= @fuku.errors.count %>件あります</h3>
+    <ul>
+      <% @fuku.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+          <div class="field">
+            <%= f.label :title, "タイトル", class: "label" %>
+            <%= f.text_field :title, class: "input" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :body, "概要", class: "label" %>
+            <%= f.text_field :body, class: "input" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :image, "写真", class: "label" %>
+            <%= f.attachment_field :image, class: "input" %>
+          </div>
+          
+          <%= f.submit '投稿', class: "submit" %>
+<% end %>
+</div>

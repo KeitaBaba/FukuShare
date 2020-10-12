@@ -1,0 +1,16 @@
+<h2 class="is-size-3">ユーザー一覧</h2>
+  <div class="columns is-multiline is-centered">
+   <% @users.each do |user|%>
+    <div class="column is-4 has-text-centered">
+      <div class="card">
+       <div class="card-content">
+           <%= link_to(user_path(user)) do %>
+        　 <%=attachment_image_tag user,:profile_image,class:"thumbnail150" %>
+           <% end %>
+       </div>
+      </div>
+    </div>
+    <%end%>
+    </div>
+
+    

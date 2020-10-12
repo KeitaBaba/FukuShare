@@ -1,0 +1,31 @@
+<div class="form">
+　<h2 class="title">編集画面</h2>
+<%=form_for @user do |f| %>
+<% if @user.errors.any? %>
+  <div class="notification is-danger">
+    <h3>入力した内容にエラーが<%= @user.errors.count %>件あります</h3>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%=f.label :名前 %>
+<%=f.text_field :name %>
+
+<%=f.label :メールアドレス %>
+<%=f.text_field :email %>
+
+<%= f.label :写真 %>
+<%= f.attachment_field :profile_image %>  
+  
+<%=f.label :password %>
+<%=f.text_field :password %>
+
+
+ <%= f.submit '編集', class: "submit" %>
+
+<%end%>
+</div>

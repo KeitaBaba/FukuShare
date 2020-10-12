@@ -1,0 +1,2 @@
+module FukusHelper
+end
