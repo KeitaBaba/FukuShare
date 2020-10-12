@@ -10,5 +10,5 @@ class User < ApplicationRecord
   
   validates :name, presence: true
   validates :email, presence: true
-  validates :profile_image_id, presence: true
+  validates :profile_image, presence: true
 end
